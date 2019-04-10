@@ -10,10 +10,10 @@ html {
 nav ul li a.active {
     font-weight: 700;
 }
-/* -------------------
-        About me
- --------------------- */
-.first {
+/* --------------
+        GENERAL
+----------------- */
+/* .first {
     background-color:#222121;
     height: 11vh;
     width: 100%;
@@ -25,7 +25,7 @@ nav ul li a.active {
 
 .first li {
     display: inline-block;
-    /* margin-right: 2%;  */
+    margin-right: 2%; 
     margin-left: 8%;
 } 
 
@@ -40,26 +40,67 @@ nav ul li a.active {
 .first li a:hover {
     color: #F9F871;
     border-bottom: 1px solid #F9F871;
+} */
+/* .hamburger-menu label{
+    font-size: 25px;
+    display: inline-block;
+    display: none;
 }
+#toggle { 
+    display: none;
+}
+@media only screen and (max-width:500px){
+    .hamburger-menu label {
+        display: block;
+        cursor: pointer;
+    }
+    .first {
+        display: none;
+        width: 100%;
+    }
+    .first a{
+        display: block;
+        border-bottom: 2px solid goldenrod;
+    }
+    #toggle:checked + .first{
+        display: block;
+    }
+} */
+footer {
+    background-color:#222121;
+    height: 20vh; 
+    padding: 3vh;
+}
+footer p {
+    color: #fff;
+}
+.footer-container {
+    text-align: center;
+}
+.end {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fab {
+    font-size: 35px;
+    color: #966F33;
+}
+.fab:hover {
+    color: rgb(150, 111, 51, 0.5);
+}
+/* -------------------
+        About me
+ --------------------- */
 .picture {
     background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(images/machina.jpg);
     height: 100vh;
     background-size: cover;
     background-attachment: fixed;
 }
-.profile {
-    text-align: center;
-}
-.profile img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    box-shadow: 2px -2px 2px grey;
-    transition: transform 0.6s;
-}
-.profile img:hover {
-    transform: scale(1.2);
-}
+
 .head-text {
     width: auto;
     position: absolute;
@@ -99,17 +140,30 @@ main p {
     margin: 6vh auto;
     font-size: 20px;
 }
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 6vh auto;
+}
+.logo-container div {
+    width: 25%;
+    height: auto;
+}
+.logo-container div img {
+    width: 80%;
+}
+
 /* -----------------
         Projects
 -------------------- */
 .image_box {
     position: relative;
-    width: 25%;
-    top: 20vh;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
-    display: block;
+    /* display: block; */
     width: 100%;
     height: auto;
 }
@@ -118,8 +172,7 @@ main p {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #F9F871;
-    opacity: 0.5;
+    background-color: rgba(148, 109, 50, 0.5);
     width: 100%;
     overflow: hidden;
     height: 0;
@@ -132,12 +185,135 @@ main p {
     position: absolute;
     top: 5%;
     left: 5%;
+    font-size: 30px;
+    font-weight: 400;
 }
 .text2 {
     position: absolute;
     bottom: 5%;
     left: 5%;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(77, 75, 75);
+}
+.text2 a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #3e3396;
+}
+
+#top-project {
+    padding-top: 8%;
+    text-align: center;
+    font-weight: 300;
+    color: #966F33;
+}
+
+.big_container {
+    height: 70vh;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 150px;
+    padding-top: 3%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 35vh 35vh;
+    grid-template-areas: 
+        "a a a a a a c c c b b b"
+        "a a a a a a d d d e e e";
+}
+.box1 {
+    grid-area: a;
+}
+.box2 {
+    grid-area: c;
+}
+.box3 {
+    grid-area: b;
+}
+.box5 {
+    grid-area: e;
+}
+.box4 {
+    grid-area: d;
+}
+@media only screen and (max-width: 999px) and (min-width: 600px){
+    #top-project {
+        padding-top: 10%;
+    }
+    .big_container {
+        height: 110vh;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 150px;
+        padding-top: 3%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 25vh 25vh 15vh 15vh 15vh 15vh;
+        grid-template-areas: 
+            "a a a a a a a a a a a a"
+            "a a a a a a a a a a a a"
+            "b b b b b b c c c c c c"
+            "b b b b b b c c c c c c"
+            "d d d d d d e e e e e e"
+            "d d d d d d e e e e e e";
+    }
+    .box1 {
+        grid-area: a;
+    }
+    .box2 {
+        grid-area: c;
+    }
+    .box3 {
+        grid-area: b;
+    }
+    .box5 {
+        grid-area: e;
+    }
+    .box4 {
+        grid-area: d;
+    }  
+}
+
+@media only screen and (max-width: 599px) {
+    .image {
+        width: 100%;
+        height: 100%;
+    }
+    #top-project {
+        padding-top: 16%;
+    }
+
+    .big_container {
+        height: 70vh;
+        width: 80%;
+        margin: auto;
+        margin-bottom: 150px;
+        padding-top: 3%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "a a a a a a a a a a a a"
+            "b b b b b b b b b b b b"
+            "c c c c c c c c c c c c"
+            "d d d d d d d d d d d d"
+            "e e e e e e e e e e e e";
+    }
+    .box1 {
+        grid-area: a;
+    }
+    .box2 {
+        grid-area: c;
+    }
+    .box3 {
+        grid-area: b;
+    }
+    .box5 {
+        grid-area: e;
+    }
+    .box4 {
+        grid-area: d;
+
+}
 }
 /* -----------------
         Contact
@@ -174,4 +350,23 @@ form div label {
     background-color: #F9F871;
     color: #222121;
 }
-
+/* ---Animation--- */
+.flip-scale:hover {
+	-webkit-animation: flip 0.5s linear both;
+	        animation: flip 0.5s linear both;
+}
+ @-webkit-keyframes flip {
+    0% {
+      -webkit-transform: scale(1) rotateY(0);
+              transform: scale(1) rotateY(0);
+    }
+    50% {
+      -webkit-transform: scale(1.3) rotateY(90deg);
+              transform: scale(1.3) rotateY(90deg);
+    }
+    100% {
+      -webkit-transform: scale(1) rotateY(180deg);
+              transform: scale(1) rotateY(180deg);
+    }
+  }
+  
