@@ -1,3 +1,8 @@
+
+/* --------------
+        GENERAL
+----------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,88 +14,28 @@ html {
 }
 nav ul li a.active {
     font-weight: 700;
-}
-/* --------------
-        GENERAL
------------------ */
-/* .first {
-    background-color:#222121;
-    height: 11vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 2;
-}
-
-.first li {
-    display: inline-block;
-    margin-right: 2%; 
-    margin-left: 8%;
 } 
-
-.first li a {
-    color: rgb(230, 224, 224);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 300;
-    transition: color 0.5s;
-    transition: border-bottom 0.5s;
+  
+.contact-me {
+    width: 3%;
+    height: auto;
+    float: right;
+    transition: transform 0.5s;
+    margin-right: 3%;
 }
-.first li a:hover {
-    color: #F9F871;
-    border-bottom: 1px solid #F9F871;
-} */
-/* .hamburger-menu label{
-    font-size: 25px;
-    display: inline-block;
-    display: none;
+.contact-me:hover {
+    transform: scale(1.2);
 }
-#toggle { 
-    display: none;
-}
-@media only screen and (max-width:500px){
-    .hamburger-menu label {
-        display: block;
-        cursor: pointer;
-    }
-    .first {
+@media only screen and (max-width:767px) {
+    .contact-me {
         display: none;
-        width: 100%;
     }
-    .first a{
-        display: block;
-        border-bottom: 2px solid goldenrod;
-    }
-    #toggle:checked + .first{
-        display: block;
-    }
+}
+/* .logo {
+    height: 12vh;
+    width: auto;
 } */
-footer {
-    background-color:#222121;
-    height: 20vh; 
-    padding: 3vh;
-}
-footer p {
-    color: #fff;
-}
-.footer-container {
-    text-align: center;
-}
-.end {
-    width: 30%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-}
 
-.fab {
-    font-size: 35px;
-    color: #966F33;
-}
-.fab:hover {
-    color: rgb(150, 111, 51, 0.5);
-}
 /* -------------------
         About me
  --------------------- */
@@ -99,6 +44,7 @@ footer p {
     height: 100vh;
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
 }
 
 .head-text {
@@ -118,11 +64,25 @@ h1 {
 span {
     color: #F9F871;
 }
+.fa-chevron-down {
+    z-index: 3;
+    color: #F9F871;
+    font-size: 400%;
+    position: absolute;
+    bottom: 15%;
+    left: 47%;
+    transition: transform 0.5s;
+}
+.fa-chevron-down:hover {
+    transform: scale(1.2);
+}
+/* **Section1** */
 h2 {
     text-align: center;
     font-size: 40px;
     color:#966F33;
     margin-top: 5vh;
+    padding-top: 8vh;
 }
 
 h2:after {
@@ -140,9 +100,10 @@ main p {
     margin: 6vh auto;
     font-size: 20px;
 }
+/* **Section2** */
 .logo-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     margin: 6vh auto;
 }
 .logo-container div {
@@ -153,6 +114,34 @@ main p {
     width: 80%;
 }
 
+/* **Footer** */
+footer {
+    background-color:#222121;
+    height: 20vh; 
+    padding: 3vh;
+}
+footer p {
+    color: #fff;
+}
+.footer-container {
+    text-align: center;
+}
+.social-media {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fab {
+    font-size: 25px;
+    color: #966F33;
+    right: 20%;
+
+}
+.fab:hover {
+    color: rgb(150, 111, 51, 0.5);
+}
 /* -----------------
         Projects
 -------------------- */
@@ -192,11 +181,12 @@ main p {
     position: absolute;
     bottom: 5%;
     left: 5%;
-    border-bottom: 1px solid rgb(77, 75, 75);
+    border-bottom: 2px solid rgb(77, 75, 75);
 }
 .text2 a {
     text-decoration: none;
     font-size: 20px;
+    font-weight: 700;
     color: #3e3396;
 }
 
@@ -235,7 +225,7 @@ main p {
 .box4 {
     grid-area: d;
 }
-@media only screen and (max-width: 999px) and (min-width: 600px){
+@media only screen and (max-width: 999px) and (min-width: 767px){
     #top-project {
         padding-top: 10%;
     }
@@ -273,7 +263,7 @@ main p {
     }  
 }
 
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 767px) {
     .image {
         width: 100%;
         height: 100%;
@@ -314,6 +304,39 @@ main p {
         grid-area: d;
 
 }
+}
+.modalDialog {
+    position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 5;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    overflow: scroll;
+}
+.modalDialog:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+.modalDialog > div {
+	width: 80%;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.project-picture {
+    text-align: center;
+}
+.project-picture img {
+    width: 85%;
 }
 /* -----------------
         Contact
